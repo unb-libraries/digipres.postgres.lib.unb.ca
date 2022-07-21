@@ -1,0 +1,15 @@
+services:
+  digipres.postgres.lib.unb.ca:
+    build:
+      context: .
+    container_name: digipres.postgres.lib.unb.ca
+    restart: unless-stopped
+    expose:
+      - "5432"
+    env_file:
+      - ./env/postgres.env
+    networks:
+      - digipres.postgres.lib.unb.ca
+networks:
+  digipres.postgres.lib.unb.ca:
+    name: digipres.postgres.lib.unb.ca

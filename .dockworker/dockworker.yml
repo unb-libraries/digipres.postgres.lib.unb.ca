@@ -1,0 +1,21 @@
+dockworker:
+  version: '5'
+  application:
+    name: digipres.postgres.lib.unb.ca
+    finish_marker: 'database system is ready to accept connections'
+    project_prefix: DIGIPRES
+    upstream_images:
+      - postgres:12
+    uuid: 3509
+  deployment:
+    environments:
+      - prod
+  github:
+    repo: digipres.postgres.lib.unb.ca
+    owner: unb-libraries
+  image:
+    push_branches:
+      - prod
+    name: ghcr.io/unb-libraries/digipres.postgres.lib.unb.ca
+    date_tag_image: true
+    repository: ghcr
